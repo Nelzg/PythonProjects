@@ -1,0 +1,41 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+Создать аккаунт
+{% endblock %}
+
+{% block page-lead %}
+
+{% endblock %}
+
+
+{% block content %}
+<div class="container-sm px-5 py-5" id="term-form">
+    <form method="post">
+        <div class="row px-5 py-2">
+            <h3>Данные аккаунта</h3>
+        </div>
+        <div class="row px-5 py-2">
+            <div class="col-md-6">
+                <label for="name">Ваше имя:</label>
+                <input type="text" class="form-control input-lg" name="name" id="name" placeholder="Имя" value required>
+            </div>
+            <div class="col-md-6">
+                <label for="email">Ваш контактный email:</label>
+                <input type="text" class="form-control input-lg" name="email" id="email" placeholder="Email" value required>
+            </div>
+            <div class="col-md-6">
+                <label for="password_1">Ваш пароль:</label>
+                <input type="password" class="form-control input-lg" name="password_1" id="password_1" placeholder="Пароль" value required>
+            </div>
+            <div class="col-md-6">
+                <label for="password_2">Повторите ваш пароль:</label>
+                <input type="password" class="form-control input-lg" name="password_2" id="password_2" placeholder="Пароль" value required>
+            </div>
+        </div>
+        <div class="row px-5 py-2">
+            <button type="submit" class="btn btn-primary" formaction="/send-user">Зарегистрироваться</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+{% if success %}
+<div class="jumbotron text-center mb-5" style="background-color: #00ff26; padding: 60px 20px;">
+    <h1 class="display-4">Верный перевод</h1>
+</div>
+{% else %}
+<div class="jumbotron text-center mb-5" style="background-color: #ff0000; padding: 60px 20px;">
+    <h1 class="display-4">Неверный перевод</h1>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block page-lead %}{% endblock %}
+
+{% block content %}
+<div class="container-sm px-5 py-5" id="term-form-result">
+    <h2 class="pb-2 border-bottom">Комментарий</h2>
+    <p>{{ comment }}</p>
+    <p> Ваш счет {{ user_score }} ({{ score_change }})</p>
+
+    <h2 class="pb-2 border-bottom">Что можно сделать?</h2>
+    <ul>
+        <li> <a href="/login">Продолжить</a> </li>
+        <li> Вернуться на <a href="/">главную</a></li>
+    </ul>
+</div>
+{% endblock %}

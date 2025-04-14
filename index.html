@@ -1,0 +1,87 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+{% endblock %}
+{% block page-lead %}
+<div class="jumbotron text-center mb-5" style="background-color: #f8f9fa; padding: 60px 20px;">
+    <h1 class="display-4">🌍 Добро пожаловать в WordTranslate!</h1>
+    <p class="lead">Здесь вы можете добавлять и просматривать слова, управлять пользователями и многое другое.</p>
+    <form method="post" action="/word-translate-login">
+      {% csrf_token %}
+      <button class="btn btn-primary btn-lg mt-3" type="submit">Начать обучение</button>
+    </form>
+</div>
+{% endblock %}
+
+{% block content %}
+<style>
+    .card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .card-header {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .card-body {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+</style>
+
+<div class="row text-center">
+    <div class="col-md-4">
+        <div class="card mb-4 box-shadow">
+        <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Таблица слов</h4>
+        </div>
+        <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4">
+            <li>Здесь можно посмотреть на таблицу имеющихся слов с переводами и определениями</li>
+            </ul>
+            <form method="post" action="/terms-list">
+                <button type="submit" class="btn btn-lg btn-block btn-primary">Посмотреть</button>
+            </form>
+        </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card mb-4 box-shadow">
+        <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Добавление новых слов</h4>
+        </div>
+        <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4">
+            <li>Здесь можно добавить ваш перевод слова</li>
+            </ul>
+            <form method="post" action="/add-term">
+                <button type="submit" class="btn btn-lg btn-block btn-primary">Добавить слово</button>
+            </form>
+        </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card mb-4 box-shadow">
+        <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Регистрация нового пользователя</h4>
+        </div>
+        <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4">
+            <li>Здесь можно добавить нового пользователя</li>
+            </ul>
+            <form method="post" action="/user-registration">
+                <button type="submit" class="btn btn-lg btn-block btn-primary">Зарегистрироваться</button>
+            </form>
+        </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

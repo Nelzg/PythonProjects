@@ -1,0 +1,21 @@
+{% extends "base_page.html" %}
+
+{% block content %}
+
+<body class="text-center">
+    
+    <form class="form-signin" method="post">
+      <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+      <h1 class="h3 mb-4 font-weight-normal">Войдите в аккаунт</h1>
+      <label for="name" class="sr-only mb-2">Ваше имя</label>
+      <input type="text" class="form-control input-lg" id="name" name="name" placeholder="Имя" value required style="width: 200px; font-size: 16px; margin-left: 550px;">
+      <label for="password" class="sr-only mb-2 ">Пароль</label>
+      <input type="password" id="password" name="password" class="form-control" placeholder="Пароль" required style="width: 200px; font-size: 16px; margin-left: 550px;">
+      <button class="btn btn-lg btn-primary btn-block" style="margin-top: 20px;" type="submit" formaction="/login">Войти</button> 
+      <ul> <a href="/user-registration">Зарегистрироваться</a> </ul>
+      
+    </form>
+</body>
+
+{% endblock %}
+

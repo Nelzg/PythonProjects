@@ -1,0 +1,35 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+{% if success %}
+<p>Ваш счет: {{ score }}</p>
+{% else %}
+Неверный перевод
+{% endif %}
+{% endblock %}
+
+{% block page-lead %}{% endblock %}
+
+{% block content %}
+<form method="post">
+<div class="row px-5 py-2">
+    <h3>{{ comment }}</h3>
+</div>
+    <div class="row px-5 py-2">
+        <div class="col-md-8">
+            <label for="user_translation">Ваш перевод слова</label>
+            <textarea type="text" class="form-control input-lg" name="user_translation" id="user_translation" aria-describedby="definition_note" rows="3"></textarea>
+        </div>
+    </div>
+    <div class="row px-5 py-2">
+        <button type="submit" class="btn btn-primary" formaction="/check-word">Проверить</button>
+    </div>
+</form>
+<div class="container-sm px-5 py-5" id="term-form-result">
+    <h2 class="pb-2 border-bottom">Что можно сделать?</h2>
+    <ul>
+        <li> Войти в <a href="/word-translate-login">другой</a> аккаунт,</li>
+        <li>вернуться на <a href="/">главную</a></li>
+    </ul>
+</div>
+{% endblock %}
